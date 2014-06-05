@@ -4,18 +4,8 @@
 
 ## Installation
 
-### With NPM
-
 ```sh
 $ npm install retext-visit
-```
-
-### Git
-
-```sh
-git clone https://github.com/wooorm/retext-visit.git
-cd retext-visit
-npm install
 ```
 
 ## Usage
