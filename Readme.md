@@ -1,4 +1,4 @@
-# retext-visit [![Build Status](https://travis-ci.org/wooorm/retext-visit.png)](https://travis-ci.org/wooorm/retext-visit)
+# retext-visit [![Build Status](https://travis-ci.org/wooorm/retext-visit.svg?branch=master)](https://travis-ci.org/wooorm/retext-visit) [![Coverage Status](https://img.shields.io/coveralls/wooorm/retext-visit.svg)](https://coveralls.io/r/wooorm/retext-visit?branch=master)
 
 **[retext](https://github.com/wooorm/retext "Retext")** node visitor.
 
