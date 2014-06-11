@@ -1,0 +1,17 @@
+{
+  "name": "retext-visit",
+  "repository": "wooorm/retext-visit",
+  "description": "Retext node visitor",
+  "version": "0.0.2",
+  "keywords": [
+    "retext",
+    "visit"
+  ],
+  "dependencies": {
+    "wooorm/retext": "^0.0.8"
+  },
+  "scripts" : [
+    "index.js"
+  ],
+  "license": "MIT"
+}
