@@ -1,10 +1,14 @@
+'use strict';
 
-var visit = require('..'),
-    Retext = require('retext'),
-    assert = require('assert'),
-    retext = new Retext().use(visit).parse('A simple english sentence.'),
-    TextOM = retext.TextOM,
-    simpleWordNode = retext.head.head.head.next.next;
+var visit, TextOM, Retext, assert, retext, simpleWordNode;
+
+visit = require('..');
+Retext = require('retext');
+assert = require('assert');
+
+retext = new Retext().use(visit).parse('A simple english sentence.');
+TextOM = retext.TextOM;
+simpleWordNode = retext.head.head.head.next.next;
 
 describe('visit', function () {
     it('should be of type `function`', function () {
