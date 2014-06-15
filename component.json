@@ -7,9 +7,6 @@
     "retext",
     "visit"
   ],
-  "dependencies": {
-    "wooorm/retext": "^0.0.8"
-  },
   "scripts" : [
     "index.js"
   ],
