@@ -1,4 +1,13 @@
 
+n.n.n / 2014-07-07
+==================
+
+ * Modified docs for changes in retext
+ * Modified unit test for changes in retext
+ * Updated retext to the ^0.1.0
+ * Removed browserify and complexity-report
+ * Updated browserify, istanbul, and jscs
+
 0.0.5 / 2014-06-19
 ==================
 
