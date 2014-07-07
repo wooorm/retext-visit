@@ -43,7 +43,7 @@ describe('visit(callback)', function () {
                 count++;
             });
 
-            assert(count === 10);
+            assert(count === 18);
         }
     );
 
@@ -58,7 +58,7 @@ describe('visit(callback)', function () {
                 }
             });
 
-            assert(count === 5);
+            assert(count === 7);
         }
     );
 });
