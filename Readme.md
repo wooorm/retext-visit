@@ -39,14 +39,23 @@ var root = new Retext()
 root.head.head.visit(function (node) {
     console.log(node.toString());
 });
-// 'A'
-// ' '
-// 'simple'
-// ' '
-// 'english'
-// ' '
-// 'sentence'
-// '.'
+/* 'A' // WordNode
+ * 'A' // TextNode
+ * ' ' // WhiteSpaceNode
+ * ' ' // TextNode
+ * 'simple' // WordNode
+ * 'simple' // TextNode
+ * ' ' // WhiteSpaceNode
+ * ' ' // TextNode
+ * 'english' // WordNode
+ * 'english' // TextNode
+ * ' ' // WhiteSpaceNode
+ * ' ' // TextNode
+ * 'sentence' // WordNode
+ * 'sentence' // TextNode
+ * '.' // PunctuationNode
+ * '.' // TextNode
+ */
 ```
 
 Visit every node inside the operated on node.
@@ -69,7 +78,7 @@ root.visitType(root.WORD_NODE, function (wordNode) {
 
 Visit every node of type `type` inside the operated on node.
 
-- `type`: A type of a node (e.g., PARAGRAPH_NODE, WORD_NODE, or WHITE_SPACE_NODE);
+- `type`: A type of a node (e.g., node.PARAGRAPH_NODE, node.WORD_NODE, or node.WHITE_SPACE_NODE);
 - `callback` (`function`): The function to call with each node.
 
 When callback return false, stops iterating.
