@@ -28,7 +28,6 @@
     "lint-style": "node_modules/.bin/jscs index.js spec/retext-visit.spec.js --reporter=inline",
     "install-browser-test": "npm install browserify",
     "build-browser-test": "node_modules/.bin/browserify spec/retext-visit.spec.js -o spec/browser.spec.js",
-    "prepublish": "npm run-script build-browser",
     "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- spec/retext-visit.spec.js",
     "make": "npm run-script lint && npm run-script coverage"
   },
