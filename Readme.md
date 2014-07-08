@@ -29,6 +29,8 @@ var Retext = require('retext'),
 var root = new Retext()
     .use(visit)
     .parse('A simple english sentence.');
+
+/* You wont believe what happened next! (a.k.a., its really straightforward, see below.) */
 ```
 
 ## API
