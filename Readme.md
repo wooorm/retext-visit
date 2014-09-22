@@ -4,14 +4,19 @@
 
 ## Installation
 
-NPM:
+npm:
 ```sh
 $ npm install retext-visit
 ```
 
-Component.js:
+Component:
 ```sh
 $ component install wooorm/retext-visit
+```
+
+Bower:
+```sh
+$ bower install retext-visit
 ```
 
 ## Usage
