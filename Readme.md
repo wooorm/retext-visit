@@ -81,4 +81,4 @@ When callback return false, stops iterating.
 
 ## License
 
-  MIT
+MIT © Titus Wormer
