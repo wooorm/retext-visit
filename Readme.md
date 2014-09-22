@@ -22,67 +22,84 @@ $ bower install retext-visit
 ## Usage
 
 ```js
-var Retext = require('retext'),
-    visit = require('retext-visit');
+var Retext,
+    retext,
+    visit;
 
-var root = new Retext()
-    .use(visit)
-    .parse('A simple english sentence.');
+Retext = require('retext');
+visit = require('retext-visit');
 
-/* You wont believe what happened next! (a.k.a., its really straightforward, see below.) */
+retext = new Retext().use(visit);
 ```
 
 ## API
 
-### Node#visit(callback)
+The below examples uses retext 0.2.0, which is currently in beta. For an example with the stable retext, see [retext-visit@0.1.0](https://github.com/wooorm/retext-visit/tree/0.1.0).
+
+### Node#visit(function(Node): boolean?)
 
 ```js
-root.head.head.visit(function (node) {
-    console.log(node.toString());
+retext.parse('A simple English sentence.', function (err, tree) {
+    if (err) throw err;
+
+    /**
+     * Visit every node in the first sentence.
+     */
+
+    tree.head.head.visit(function (node) {
+        console.log(node.toString(), node.type);
+    });
+    /**
+     * 'A', 'WordNode'
+     * 'A', 'TextNode'
+     * ' ', 'WhiteSpaceNode'
+     * ' ', 'TextNode'
+     * 'simple', 'WordNode'
+     * 'simple', 'TextNode'
+     * ' ', 'WhiteSpaceNode'
+     * ' ', 'TextNode'
+     * 'English', 'WordNode'
+     * 'English', 'TextNode'
+     * ' ', 'WhiteSpaceNode'
+     * ' ', 'TextNode'
+     * 'sentence', 'WordNode'
+     * 'sentence', 'TextNode'
+     * '.', 'PunctuationNode'
+     * '.', 'TextNode'
+     */
 });
-/* 'A' // WordNode
- * 'A' // TextNode
- * ' ' // WhiteSpaceNode
- * ' ' // TextNode
- * 'simple' // WordNode
- * 'simple' // TextNode
- * ' ' // WhiteSpaceNode
- * ' ' // TextNode
- * 'english' // WordNode
- * 'english' // TextNode
- * ' ' // WhiteSpaceNode
- * ' ' // TextNode
- * 'sentence' // WordNode
- * 'sentence' // TextNode
- * '.' // PunctuationNode
- * '.' // TextNode
- */
 ```
 
-Visit every node inside the operated on node.
+Invoke `callback` for every descendant of the operated on context.
 
-- `callback` (`function`): The function to call with each node.
-
-When callback return false, stops iterating.
+- `callback` (`function(Node): boolean?`): Visitor. Stops visiting when the return value is `false`.
 
 ### Node#visitType(type, callback)
 
 ```js
-root.visitType(root.WORD_NODE, function (wordNode) {
-    console.log(wordNode.toString());
+retext.parse('A simple English sentence.', function (err, tree) {
+    if (err) throw err;
+
+    /**
+     * Visit every word node.
+     */
+
+    tree.visitType(tree.WORD_NODE, function (node) {
+        console.log(node.toString(), node.type);
+    });
+    /**
+     * 'A', 'WordNode'
+     * 'simple', 'WordNode'
+     * 'English', 'WordNode'
+     * 'sentence', 'WordNode'
+     */
 });
-// 'A'
-// 'simple'
-// 'english'
-// 'sentence'
 ```
 
-Visit every node of type `type` inside the operated on node.
+Invoke `callback` for every descendant with a given `type` in the operated on context.
 
-- `type`: A type of a node (e.g., node.PARAGRAPH_NODE, node.WORD_NODE, or node.WHITE_SPACE_NODE);
-- `callback` (`function`): The function to call with each node.
-
-When callback return false, stops iterating.
+- `type` (`string`): Type of the nodes to visit.
+- `callback` (`function(Node): boolean?`): Visitor. Stops visiting when the return value is `false`.
 
 ## License
 
