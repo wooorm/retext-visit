@@ -2,7 +2,7 @@
   "name": "retext-visit",
   "version": "0.1.0",
   "description": "Retext node visitor",
-  "license": "MIT"
+  "license": "MIT",
   "keywords": [
     "retext",
     "visit"
