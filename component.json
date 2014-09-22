@@ -1,14 +1,14 @@
 {
   "name": "retext-visit",
-  "repository": "wooorm/retext-visit",
-  "description": "Retext node visitor",
   "version": "0.1.0",
+  "description": "Retext node visitor",
+  "license": "MIT",
   "keywords": [
     "retext",
     "visit"
   ],
+  "repository": "wooorm/retext-visit",
   "scripts" : [
     "index.js"
-  ],
-  "license": "MIT"
+  ]
 }
