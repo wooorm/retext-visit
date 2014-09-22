@@ -3,4 +3,3 @@ bower_components
 components
 .DS_Store
 coverage
-spec/browser.spec.js
