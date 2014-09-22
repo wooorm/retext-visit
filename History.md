@@ -1,4 +1,28 @@
 
+n.n.n / 2014-09-22
+==================
+
+ * Update Readme.md
+ * Refactor API
+ * Fix missing comma introduced in 2054a6f
+ * Add npm deployment to travis
+ * Remove browser test
+ * Update .gitignore, .npmignore
+ * Update Installation in docs
+ * Add bower.json
+ * Fix property order in component.json, package.json
+ * Update copyright in docs
+ * Remove testling
+ * Refactor spec
+ * Update dependencies
+ * Add retext as a peer dependency
+ * Add spec/browser.spec.js to gitignore
+ * Add components to gitignore
+ * Update eslint, istanbul
+ * Removed a no-op npm script
+ * Fixed a missing space
+ * Fixed usage example
+
 0.1.0 / 2014-07-07
 ==================
 
