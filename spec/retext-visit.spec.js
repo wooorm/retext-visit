@@ -39,6 +39,9 @@ describe('visit', function () {
         assert(typeof (new TextOM.RootNode()).visit === 'function');
         assert(typeof (new TextOM.ParagraphNode()).visit === 'function');
         assert(typeof (new TextOM.SentenceNode()).visit === 'function');
+        assert(typeof (new TextOM.WordNode()).visit === 'function');
+        assert(typeof (new TextOM.PunctuationNode()).visit === 'function');
+        assert(typeof (new TextOM.WhiteSpaceNode()).visit === 'function');
     });
 
     it('should attach a `visitType` method to `Parent#`', function () {
@@ -47,6 +50,11 @@ describe('visit', function () {
         assert(typeof (new TextOM.RootNode()).visitType === 'function');
         assert(typeof (new TextOM.ParagraphNode()).visitType === 'function');
         assert(typeof (new TextOM.SentenceNode()).visitType === 'function');
+        assert(typeof (new TextOM.WordNode()).visitType === 'function');
+        assert(
+            typeof (new TextOM.PunctuationNode()).visitType === 'function'
+        );
+        assert(typeof (new TextOM.WhiteSpaceNode()).visitType === 'function');
     });
 });
 
