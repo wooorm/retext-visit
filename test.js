@@ -11,7 +11,7 @@ var visit,
  * Module dependencies.
  */
 
-visit = require('..');
+visit = require('./');
 Retext = require('retext');
 assert = require('assert');
 
