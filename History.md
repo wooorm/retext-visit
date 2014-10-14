@@ -1,4 +1,13 @@
 
+n.n.n / 2014-10-14
+==================
+
+ * Remove `visitType`, add `type` parameter to `visit`
+ * Update .gitignore, .npmignore, bower ignore
+ * Move spec to test.js
+ * Fix spec for `visit` on {Word,WhiteSpace,Punctuation}Node
+ * Remove `version`, add `main`, in bower.json
+
 0.1.1 / 2014-09-22
 ==================
 
