@@ -8,7 +8,7 @@ var visit,
     sentence;
 
 /**
- * Module dependencies.
+ * Dependencies.
  */
 
 visit = require('./');
@@ -25,7 +25,7 @@ retext = new Retext().use(visit);
 TextOM = retext.TextOM;
 
 /**
- * Unit tests.
+ * Tests.
  */
 
 describe('visit', function () {
@@ -57,10 +57,6 @@ describe('visit', function () {
         assert(typeof (new TextOM.WhiteSpaceNode()).visitType === 'function');
     });
 });
-
-/**
- * Unit tests for `visit`.
- */
 
 describe('visit(callback)', function () {
     it('should invoke `callback` for every descendant of context',
@@ -104,11 +100,7 @@ describe('visit(callback)', function () {
     });
 });
 
-/**
- * Unit tests for `visitType`.
- */
-
-describe('visitType(type, callback)', function () {
+describe('visit(type, callback)', function () {
     it('should invoke `callback` for every descendant of context of `type`',
         function (done) {
             retext.parse(sentence, function (err, tree) {
@@ -116,7 +108,7 @@ describe('visitType(type, callback)', function () {
 
                 count = 0;
 
-                tree.visitType(tree.WORD_NODE, function () {
+                tree.visit(tree.WORD_NODE, function () {
                     count++;
                 });
 
@@ -135,7 +127,7 @@ describe('visitType(type, callback)', function () {
             count = 0;
             breakingNode = tree.head.head.head.next.next;
 
-            tree.visitType(tree.WORD_NODE, function (node) {
+            tree.visit(tree.WORD_NODE, function (node) {
                 count++;
 
                 if (node === breakingNode) {
@@ -144,6 +136,16 @@ describe('visitType(type, callback)', function () {
             });
 
             assert(count === 2);
+
+            done(err);
+        });
+    });
+});
+
+describe('visitType()', function () {
+    it('should throw when invoked', function (done) {
+        retext.parse(sentence, function (err, tree) {
+            assert.throws(tree.visitType);
 
             done(err);
         });

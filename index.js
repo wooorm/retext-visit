@@ -15,11 +15,16 @@ function plugin() {}
  * @this {Node} Context to search in.
  */
 
-function visit(callback) {
+function visit(type, callback) {
     var node,
         next;
 
     node = this.head;
+
+    if (!callback) {
+        callback = type;
+        type = null;
+    }
 
     while (node) {
         /**
@@ -28,8 +33,10 @@ function visit(callback) {
 
         next = node.next;
 
-        if (callback(node) === false) {
-            return;
+        if (!type || node.type === type) {
+            if (callback(node) === false) {
+                return;
+            }
         }
 
         /**
@@ -38,7 +45,7 @@ function visit(callback) {
          * `visit` method.
          */
 
-        (node.visit || visit).call(node, callback);
+        (node.visit || visit).call(node, type, callback);
 
         node = next;
     }
@@ -48,29 +55,14 @@ function visit(callback) {
  * Invoke `callback` for every descendant with a given
  * `type` in the operated on context.
  *
- * @param {string} type - Type of a node.
- * @param {function(Node): boolean?} callback - Visitor.
- *   Stops visiting when the return value is `false`.
- * @this {Node} Context to search in.
+ * @deprecated
  */
 
-function visitType(type, callback) {
-    /**
-     * A wrapper for `callback` to check it the node's
-     * type property matches `type`.
-     *
-     * @param {node} type - Descendant.
-     * @return {*} Passes `callback`s return value
-     *   through.
-     */
-
-    function wrapper(node) {
-        if (node.type === type) {
-            return callback(node);
-        }
-    }
-
-    this.visit(wrapper);
+function visitType() {
+    throw new Error(
+        'visitType(type, callback) is deprecated.\n' +
+        'Use `visit(type, callback)` instead.'
+    )
 }
 
 function attach(retext) {
