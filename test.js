@@ -1,6 +1,7 @@
 'use strict';
 
 var visit,
+    inspect,
     Retext,
     assert,
     retext,
@@ -12,6 +13,7 @@ var visit,
  */
 
 visit = require('./');
+inspect = require('retext-inspect');
 Retext = require('retext');
 assert = require('assert');
 
@@ -21,7 +23,7 @@ assert = require('assert');
 
 sentence = 'A simple english sentence.';
 
-retext = new Retext().use(visit);
+retext = new Retext().use(visit).use(inspect);
 TextOM = retext.TextOM;
 
 /**
