@@ -1,16 +1,13 @@
 'use strict';
 
-var visit,
-    inspect,
-    Retext,
-    assert,
-    retext,
-    TextOM,
-    sentence;
-
 /**
  * Dependencies.
  */
+
+var visit,
+    inspect,
+    Retext,
+    assert;
 
 visit = require('./');
 inspect = require('retext-inspect');
@@ -18,12 +15,22 @@ Retext = require('retext');
 assert = require('assert');
 
 /**
- * Constants.
+ * Fixtures.
  */
+
+var sentence;
 
 sentence = 'A simple english sentence.';
 
+/**
+ * Retext.
+ */
+
+var retext,
+    TextOM;
+
 retext = new Retext().use(visit).use(inspect);
+
 TextOM = retext.TextOM;
 
 /**
