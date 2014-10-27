@@ -1,12 +1,6 @@
 'use strict';
 
 /**
- * Define `plugin`.
- */
-
-function plugin() {}
-
-/**
  * Invoke `callback` for every descendant of the
  * operated on context.
  *
@@ -65,7 +59,13 @@ function visitType() {
     )
 }
 
-function attach(retext) {
+/**
+ * Define `plugin`.
+ *
+ * @param {Retext} retext - Instance of Retext.
+ */
+
+function plugin(retext) {
     var TextOM,
         parentPrototype,
         elementPrototype;
@@ -84,12 +84,6 @@ function attach(retext) {
     elementPrototype.visit = parentPrototype.visit = visit;
     elementPrototype.visitType = parentPrototype.visitType = visitType;
 }
-
-/**
- * Expose `attach`.
- */
-
-plugin.attach = attach;
 
 /**
  * Expose `plugin`.
