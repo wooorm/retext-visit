@@ -22,21 +22,22 @@ $ bower install retext-visit
 ## Usage
 
 ```js
-var Retext,
-    retext,
-    inspect,
-    visit;
+var Retext = require('retext');
+var visit = require('retext-visit');
+var inspect = require('retext-inspect');
 
-Retext = require('retext');
-visit = require('retext-visit');
-inspect = require('retext-inspect');
+var retext = new Retext()
+    .use(inspect)
+    .use(visit);
 
-retext = new Retext().use(inspect).use(visit);
+/**
+ * See each function signature below.
+ */
 ```
 
 ## API
 
-### Node#visit(function(Node): boolean?)
+### [TextOM.Parent](https://github.com/wooorm/textom#textomparent-nlcstparent)#visit(callback)
 
 ```js
 retext.parse('A simple English sentence.', function (err, tree) {
@@ -79,9 +80,11 @@ retext.parse('A simple English sentence.', function (err, tree) {
 
 Invoke `callback` for every descendant of the operated on context.
 
+Parameters:
+
 - `callback` (`function(Node): boolean?`): Visitor. Stops visiting when it returns `false`.
 
-### Node#visit(type, callback)
+### [TextOM.Parent](https://github.com/wooorm/textom#textomparent-nlcstparent)#visit(type, callback)
 
 ```js
 retext.parse('A simple English sentence.', function (err, tree) {
@@ -105,6 +108,8 @@ retext.parse('A simple English sentence.', function (err, tree) {
 ```
 
 Invoke `callback` for every descendant of the context of `type`.
+
+Parameters:
 
 - `type`: Type of visited nodes.
 - `callback` (`function(Node): boolean?`): Visitor. Stops visiting when the return value is `false`.
