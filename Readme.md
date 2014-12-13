@@ -1,6 +1,6 @@
 # retext-visit [![Build Status](https://img.shields.io/travis/wooorm/retext-visit.svg?style=flat)](https://travis-ci.org/wooorm/retext-visit) [![Coverage Status](https://img.shields.io/coveralls/wooorm/retext-visit.svg?style=flat)](https://coveralls.io/r/wooorm/retext-visit?branch=master)
 
-**[retext](https://github.com/wooorm/retext "Retext")** node visitor.
+**[retext](https://github.com/wooorm/retext)** node visitor.
 
 ## Installation
 
