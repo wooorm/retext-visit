@@ -114,6 +114,20 @@ Parameters:
 - `type`: Type of visited nodes.
 - `callback` (`function(Node): boolean?`): Visitor. Stops visiting when the return value is `false`.
 
+## Performance
+
+On a MacBook Air.
+
+```
+             Visit every node
+  7,806 op/s » A section
+    670 op/s » An article
+
+             Visit every word node
+  6,249 op/s » A section
+    521 op/s » An article
+```
+
 ## License
 
 MIT © [Titus Wormer](http://wooorm.com)
