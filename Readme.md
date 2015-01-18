@@ -33,7 +33,7 @@ var retext = new Retext()
     .use(inspect)
     .use(visit);
 
-/**
+/*
  * See each function signature below.
  */
 ```
@@ -50,7 +50,7 @@ retext.parse('A simple English sentence.', function (err, tree) {
     tree.head.head.visit(function (node) {
         console.log(node);
     });
-    /**
+    /*
      * Logs:
      *
      * WordNode[1]
@@ -97,7 +97,7 @@ retext.parse('A simple English sentence.', function (err, tree) {
     tree.visit(tree.WORD_NODE, function (node) {
         console.log(node);
     });
-    /**
+    /*
      * WordNode[1]
      * └─ TextNode: 'A'
      * WordNode[1]
