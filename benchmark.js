@@ -3,14 +3,14 @@
 var Retext,
     visit;
 
-/**
+/*
  * Dependencies.
  */
 
 Retext = require('retext');
 visit = require('./');
 
-/**
+/*
  * Dependencies.
  */
 
@@ -18,7 +18,7 @@ var retext;
 
 retext = new Retext().use(visit);
 
-/**
+/*
  * Test data: A (big?) article (w/ 100 paragraphs, 500
  * sentences, 10,000 words);
  *
@@ -48,7 +48,7 @@ section = paragraph + Array(10).join('\n\n' + paragraph);
 
 article = section + Array(10).join('\n\n' + section);
 
-/**
+/*
  * Setup.
  */
 
@@ -69,12 +69,11 @@ before(function (done) {
 });
 
 /**
- * Noop.
+ * No-operation.
  */
-
 function noop() {}
 
-/**
+/*
  * Benchmark.
  */
 

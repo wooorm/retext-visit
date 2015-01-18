@@ -4,11 +4,12 @@
  * Invoke `callback` for every descendant of the
  * operated on context.
  *
+ * @param {string?} type - Node type to search for.
+ *   Stops visiting when the return value is `false`.
  * @param {function(Node): boolean?} callback - Visitor.
  *   Stops visiting when the return value is `false`.
- * @this {Node} Context to search in.
+ * @this {Node} - Context to search in.
  */
-
 function visit(type, callback) {
     var node,
         next;
@@ -21,7 +22,7 @@ function visit(type, callback) {
     }
 
     while (node) {
-        /**
+        /*
          * Allow for removal of the node by `callback`.
          */
 
@@ -33,7 +34,7 @@ function visit(type, callback) {
             }
         }
 
-        /**
+        /*
          * If possible, invoke the node's own `visit`
          *  method, otherwise call retext-visit's
          * `visit` method.
@@ -51,7 +52,6 @@ function visit(type, callback) {
  *
  * @deprecated
  */
-
 function visitType() {
     throw new Error(
         'visitType(type, callback) is deprecated.\n' +
@@ -62,9 +62,8 @@ function visitType() {
 /**
  * Define `plugin`.
  *
- * @param {Retext} retext - Instance of Retext.
+ * @param {Retext} retext
  */
-
 function plugin(retext) {
     var TextOM,
         parentPrototype,
@@ -74,7 +73,7 @@ function plugin(retext) {
     parentPrototype = TextOM.Parent.prototype;
     elementPrototype = TextOM.Element.prototype;
 
-    /**
+    /*
      * Expose `visit` and `visitType` on Parents.
      *
      * Due to multiple inheritance of Elements (Parent
@@ -85,7 +84,7 @@ function plugin(retext) {
     elementPrototype.visitType = parentPrototype.visitType = visitType;
 }
 
-/**
+/*
  * Expose `plugin`.
  */
 
