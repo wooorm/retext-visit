@@ -5,23 +5,26 @@
 ## Installation
 
 npm:
-```sh
+
+```bash
 $ npm install retext-visit
 ```
 
 Component:
-```sh
+
+```bash
 $ component install wooorm/retext-visit
 ```
 
 Bower:
-```sh
+
+```bash
 $ bower install retext-visit
 ```
 
 ## Usage
 
-```js
+```javascript
 var Retext = require('retext');
 var visit = require('retext-visit');
 var inspect = require('retext-inspect');
@@ -39,7 +42,7 @@ var retext = new Retext()
 
 ### [TextOM.Parent](https://github.com/wooorm/textom#textomparent-nlcstparent)#visit(callback)
 
-```js
+```javascript
 retext.parse('A simple English sentence.', function (err, tree) {
     if (err) throw err;
 
@@ -86,7 +89,7 @@ Parameters:
 
 ### [TextOM.Parent](https://github.com/wooorm/textom#textomparent-nlcstparent)#visit(type, callback)
 
-```js
+```javascript
 retext.parse('A simple English sentence.', function (err, tree) {
     if (err) throw err;
 
@@ -118,7 +121,7 @@ Parameters:
 
 On a MacBook Air.
 
-```
+```text
              Visit every node
   7,806 op/s » A section
     670 op/s » An article
