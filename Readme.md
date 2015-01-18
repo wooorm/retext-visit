@@ -22,6 +22,12 @@ $ component install wooorm/retext-visit
 $ bower install retext-visit
 ```
 
+[Duo](http://duojs.org/#getting-started):
+
+```javascript
+var visit = require('wooorm/retext-visit');
+```
+
 ## Usage
 
 ```javascript
